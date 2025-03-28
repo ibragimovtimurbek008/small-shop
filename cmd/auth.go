@@ -36,6 +36,9 @@ var (
 			router.HandleFunc("/auth/v1/login", handlers.LoginHandler).
 				Methods(http.MethodPost, http.MethodOptions)
 
+			router.HandleFunc("/auth/v1/verify", handlers.VerifyTokenHandler).
+				Methods(http.MethodPost, http.MethodOptions)
+
 			router.HandleFunc("/v1/_health", handlers.HealthHandler)
 
 			go func() {
